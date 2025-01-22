@@ -1,7 +1,8 @@
 {
-  "name": "firebase-rn-lib-app",
+  "name": "firebase-rn",
+  "author": "jovaanb",
   "main": "expo-router/entry",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
