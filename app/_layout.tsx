@@ -1,8 +1,13 @@
 import { SessionProvider } from "@/context";
 import { Slot } from "expo-router";
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 // Import your global CSS file
 import "../global.css";
+import { useEffect } from "react";
+
+SplashScreen.preventAutoHideAsync();
 
 /**
  * Root Layout is the highest-level layout in the app, wrapping all other layouts and screens.
@@ -15,6 +20,20 @@ import "../global.css";
  * and unauthenticated routes.
  */
 export default function Root() {
+
+  const [loaded, error] = useFonts({
+    'Kanit': require('../assets/fonts/Kanit-Regular.ttf'),
+  });
+
+  useEffect(() => {
+    if (loaded || error) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded, error]);
+
+  if (!loaded && !error) {
+    return null;
+  }
   // Set up the auth context and render our layout inside of it.
   return (
     <SessionProvider>

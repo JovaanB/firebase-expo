@@ -16,7 +16,7 @@ const TabsIndexScreen = () => {
   // ============================================================================
   // Handlers
   // ============================================================================
-  
+
   /**
    * Handles the logout process
    */
@@ -28,7 +28,7 @@ const TabsIndexScreen = () => {
   // ============================================================================
   // Computed Values
   // ============================================================================
-  
+
   /**
    * Gets the display name for the welcome message
    * Prioritizes user's name, falls back to email, then default greeting
@@ -38,12 +38,12 @@ const TabsIndexScreen = () => {
   // ============================================================================
   // Render
   // ============================================================================
-  
+
   return (
     <View className="flex-1 justify-center items-center p-4">
       {/* Welcome Section */}
       <View className="items-center mb-8">
-        <Text className="text-xl font-bold text-gray-800 mb-2">
+        <Text className="text-xl text-gray-800 mb-2">
           Welcome back,
         </Text>
         <Text className="text-2xl font-bold text-blue-600">
@@ -53,7 +53,7 @@ const TabsIndexScreen = () => {
           {user?.email}
         </Text>
       </View>
-      
+
       {/* Logout Button */}
       <Pressable
         onPress={handleLogout}

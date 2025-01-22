@@ -1,5 +1,5 @@
 import { Text } from "react-native";
-import { Redirect, Stack, Slot } from "expo-router";
+import { Redirect, Slot } from "expo-router";
 import { useSession } from "@/context";
 
 /**
